@@ -4,76 +4,206 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jeuz Portfolio</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
 <style>
-    /* Reset & Fonts */
-    * {margin:0; padding:0; box-sizing:border-box;}
-    body {font-family: 'Poppins', sans-serif; background:#f5f5f5; color:#333;}
-    a {text-decoration:none; color: inherit;}
+/* -------------------- GLOBAL --------------------- */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+    font-family:'Poppins', sans-serif;
+    background:#0e0f11;
+    color:#d8d8d8;
+}
+a { text-decoration:none; color:inherit; }
 
-    /* Navbar */
-    .navbar {display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; background:#151515; color:#fff; position:fixed; top:0; width:100%; z-index:100;}
-    .navbar h3 {font-weight:600;}
-    .navbar ul {display:flex; list-style:none; gap:1.5rem;}
-    .navbar li {cursor:pointer; text-transform:capitalize;}
-    .navbar button {padding:0.5rem 1rem; border:none; border-radius:5px; background:#fff; color:#151515; font-weight:500; cursor:pointer; text-transform:uppercase; transition:0.3s;}
-    .navbar button:hover {background:#ff6600; color:#fff;}
+.container {
+    max-width:1100px;
+    margin:auto;
+    padding:2rem;
+}
 
-    /* Header */
-    header {text-align:center; padding:6rem 2rem 3rem; background:linear-gradient(135deg,#2b2a2a,#6a6767); color:#fff;}
-    header h4 {font-weight:300;}
-    header h1 {font-size:3rem; font-weight:600;}
-    .typing {color:#ff6600; font-weight:500; display:inline-block; border-right:2px solid #fff; padding-right:3px; margin-left:5px;}
+/* -------------------- NAVBAR --------------------- */
+.navbar {
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    padding:1rem 2rem;
+    background:#101114;
+    border-bottom:1px solid rgba(0,255,200,0.15);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
 
-    /* Sections */
-    section {max-width:900px; margin:2rem auto; background:#fff; padding:2rem; border-radius:10px; box-shadow:0 4px 6px rgba(0,0,0,0.1);}
-    section h2 {text-align:center; margin-bottom:1.5rem; color:#ff6600;}
+.navbar h3 {
+    color:#00e5c1;
+    letter-spacing:1px;
+}
 
-    /* About */
-    .about_me p {line-height:1.6; margin-bottom:0.5rem;}
+.navbar ul {
+    display:flex;
+    gap:1.5rem;
+    list-style:none;
+}
 
-    /* Skills */
-    .icons-container {display:grid; grid-template-columns:repeat(auto-fit,minmax(100px,1fr)); gap:1rem; justify-items:center;}
-    .icons {text-align:center;}
-    .icons img {width:60px; height:60px; margin-bottom:8px; transition:0.3s; border-radius:5px; border:2px solid #fff;}
-    .icons img:hover {transform:scale(1.1); border-color:#ff6600;}
-    .icons span {display:block; margin-top:5px; font-weight:500;}
+.navbar li a {
+    color:#d8d8d8;
+    font-size:0.95rem;
+    transition:0.3s;
+}
 
-    /* Projects */
-    .projects-container {display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem;}
-    .project {text-align:center; padding:1rem; border-radius:10px; box-shadow:0 4px 6px rgba(0,0,0,0.1); transition:0.3s;}
-    .project img {width:100%; border-radius:10px; margin-bottom:0.5rem; transition:0.3s;}
-    .project img:hover {transform:scale(1.05);}
-    .project a {color:#151515; font-weight:500;}
-    .project:hover {transform:scale(1.05); box-shadow:0 6px 12px rgba(0,0,0,0.2);}
+.navbar li a:hover {
+    color:#00e5c1;
+}
 
-    /* Experience & Education */
-    .experience ul {padding-left:1.5rem; list-style:disc;}
-    .experience ul li {margin-bottom:0.5rem; line-height:1.4;}
+.navbar button {
+    padding:0.4rem 1rem;
+    background:#00e5c1;
+    color:#000;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.3s;
+}
+.navbar button:hover {
+    background:#00c9ab;
+}
 
-    /* Contact */
-    .contact {text-align:center;}
-    .social-icons {display:flex; justify-content:center; gap:1rem; margin-top:1rem;}
-    .social-icons a {font-size:1.5rem; transition:0.3s;}
-    .social-icons a:hover {transform:scale(1.2); color:#ff6600;}
+/* -------------------- HEADER --------------------- */
+header {
+    padding:8rem 2rem 4rem;
+    text-align:center;
+    background:#101114;
+    background-image:url('https://www.transparenttextures.com/patterns/cross-stripes.png');
+}
 
-    /* Footer */
-    footer {text-align:center; padding:1rem; background:#333; color:#fff; margin-top:2rem;}
-    
-    .education img {
-    display: block;      /* Makes it a block element */
-    margin: 1rem auto;   /* Centers horizontally */
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+header h1 {
+    font-size:3rem;
+    color:#fff;
+}
+.typing {
+    color:#00e5c1;
+    border-right:2px solid #00e5c1;
+}
+
+/* -------------------- SECTIONS --------------------- */
+section {
+    background:#131417;
+    padding:2rem;
+    border-radius:12px;
+    margin:2rem auto;
+    box-shadow:0 0 25px rgba(0,255,200,0.06);
+}
+
+section h2 {
+    text-align:center;
+    color:#00e5c1;
+    font-weight:600;
+    margin-bottom:1.5rem;
+}
+
+/* -------------------- ABOUT --------------------- */
+.about_me p {
+    line-height:1.7;
+    margin-bottom:1rem;
+}
+
+/* -------------------- SKILLS --------------------- */
+.icons-container {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+    gap:1.2rem;
+}
+
+.icons {
+    text-align:center;
+    padding:1rem;
+    background:#0e0f11;
+    border:1px solid rgba(0,255,200,0.1);
+    border-radius:12px;
+    transition:0.3s;
+}
+.icons:hover {
+    transform:scale(1.07);
+    border-color:#00e5c1;
+}
+.icons img {
+    width:55px;
+}
+.icons span {
+    margin-top:8px;
+    display:block;
+    color:#fff;
+}
+
+/* -------------------- PROJECTS --------------------- */
+.projects-container {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:1.5rem;
+}
+
+.project {
+    background:#0e0f11;
+    border:1px solid rgba(0,255,200,0.1);
+    border-radius:12px;
+    padding:1rem;
+    transition:0.3s;
+}
+.project:hover {
+    transform:scale(1.03);
+    border-color:#00e5c1;
+}
+.project img {
+    width:100%;
+    border-radius:10px;
+}
+
+.project a {
+    color:#00e5c1;
+    font-weight:500;
+}
+
+/* -------------------- EXPERIENCE --------------------- */
+.experience ul {
+    margin-left:1.3rem;
+    line-height:1.5;
+}
+
+/* -------------------- CONTACT --------------------- */
+.social-icons {
+    display:flex;
+    justify-content:center;
+    gap:1rem;
+    margin-top:1rem;
+}
+.social-icons a {
+    font-size:1.7rem;
+    color:#00e5c1;
+    transition:0.3s;
+}
+.social-icons a:hover {
+    transform:scale(1.2);
+    color:#fff;
+}
+
+/* -------------------- FOOTER --------------------- */
+footer {
+    text-align:center;
+    padding:1rem;
+    margin-top:2rem;
+    background:#101114;
+    color:#999;
 }
 </style>
 </head>
 <body>
 
+<!-- ================= NAV ================== -->
 <nav class="navbar">
     <h3>JEUZ</h3>
     <ul>
@@ -86,111 +216,106 @@
     </ul>
 </nav>
 
+<!-- ================= HEADER ================== -->
 <header>
-    <h4>Hi!</h4>
-    <h1>I'm Jeuz <span class="typing"></span></h1>
+    <h4 style="color:#aaa;">Hello!</h4>
+    <h1>I’m Jeuz <span class="typing"></span></h1>
 </header>
 
+<div class="container">
+
+<!-- ================= ABOUT ================== -->
 <section id="about_me" class="about_me">
     <h2>About Me</h2>
-    <p>Hello, I'm Jeuz, a passionate technologist studying Information Technology, specializing in both hardware and software.</p>
-    <p>My coding journey started from inspiration by friends, and I continue to enhance my skills through freeCodeCamp and personal projects.</p>
-    <p>Join me as I share my experiences, skills, and projects in the world of IT.</p>
+    <p>Hello, I'm Jeuz, a passionate technologist studying Information Technology.</p>
+    <p>I specialize in both hardware and software development, growing through self-study and practical projects.</p>
 </section>
 
+<!-- ================= SKILLS ================== -->
 <section id="skills">
     <h2>Skills</h2>
     <div class="icons-container">
-        <div class="icons"><img src="images/html.webp" alt="HTML"><span>HTML</span></div>
-        <div class="icons"><img src="images/css.png" alt="CSS"><span>CSS</span></div>
-        <div class="icons"><img src="images/js.png" alt="JavaScript"><span>JavaScript</span></div>
-        <div class="icons"><img src="images/php.png" alt="PHP"><span>PHP</span></div>
-        <div class="icons"><img src="images/github.png" alt="GitHub"><span>GitHub</span></div>
-        <div class="icons"><img src="images/godot.png" alt="Godot"><span>Godot</span></div>
-        <div class="icons"><img src="images/mysql.png" alt="MySQL"><span>MySQL</span></div>
-        <div class="icons"><img src="images/pr.png" alt="Premier Pro"><span>Premier Pro</span></div>
+        <div class="icons"><img src="images/html.webp"><span>HTML</span></div>
+        <div class="icons"><img src="images/css.png"><span>CSS</span></div>
+        <div class="icons"><img src="images/js.png"><span>JavaScript</span></div>
+        <div class="icons"><img src="images/php.png"><span>PHP</span></div>
+        <div class="icons"><img src="images/github.png"><span>GitHub</span></div>
+        <div class="icons"><img src="images/godot.png"><span>Godot</span></div>
+        <div class="icons"><img src="images/mysql.png"><span>MySQL</span></div>
+        <div class="icons"><img src="images/pr.png"><span>Premiere Pro</span></div>
     </div>
 </section>
 
+<!-- ================= PROJECTS ================== -->
 <section id="projects">
     <h2>Projects</h2>
+
     <div class="projects-container">
-        <div class="project"><img src="images/dark.png" alt="Dark Fantasy"><a href="https://shinyore.itch.io/dark-fantasy">Dark Fantasy</a></div>
-        <div class="project"><img src="images/blocky.png" alt="Blocky Game"><a href="https://shinyore.itch.io/a-blocky-game">A Blocky Game</a></div>
+        <div class="project"><img src="images/dark.png"><a href="#">Dark Fantasy</a></div>
+        <div class="project"><img src="images/blocky.png"><a href="#">A Blocky Game</a></div>
     </div>
-    <div>
-        >
-    <h3>O-Hello-Chat</h3>
-        <p>An anonymous chatting app where you can talk to people online anonymously</p>
+
+    <br><br>
+    <h3 style="color:#00e5c1;">O-Hello-Chat</h3>
+    <p>An anonymous chat application built with React + Node.js.</p>
     <ul>
-        <li>Designed the application using react vite for the front end and Node js for the back end.</li>
-        <li>Still in the developmen phase.</li>
-        <a href ="https://anony-chat-green.vercel.app/">https://anony-chat-green.vercel.app/</a>
-        
+        <li>Frontend built with Vite + React</li>
+        <li>Backend powered by Node.js</li>
+        <li>Currently in development stage</li>
     </ul>
-    </div>
+    <a href="https://anony-chat-green.vercel.app/" style="color:#00e5c1;">Visit App</a>
 </section>
 
+<!-- ================= EXPERIENCE ================== -->
 <section id="experience" class="experience">
     <h2>Experience</h2>
-    <h3>Thesis December 2024</h3>
-    <p>IGO Bike Shop - Inventory Management & POS System</p>
+    <h3 style="color:#fff;">Thesis — 2024</h3>
+    <p>IGO Bike Shop • Inventory & POS System</p>
     <ul>
-        <li>Designed and programmed the interface using PHP & JavaScript</li>
-        <li>Used MySQL for the database</li>
-        <li>Performed testing and documentation</li>
+        <li>Built UI using PHP & JavaScript</li>
+        <li>Database implemented with MySQL</li>
+        <li>Completed testing + documentation</li>
     </ul>
 </section>
 
-<section class="education">
-    <h2>Education</h2>
-    <center>
-         <p>Studying Information Technology</p>
-    <img src="https://media.licdn.com/dms/image/C510BAQElTYXV4wXSVQ/company-logo_200_200/0/1570034566763?e=2147483647&v=beta&t=pWGHXDc_17Uprr50FmwAKfnOfrQWIitiPBCg9lUdog4" alt="">
-
-    </center>
-   
+<!-- ================= CONTACT ================== -->
 <section id="contact" class="contact">
     <h2>Contact Me</h2>
     <p>Let's connect!</p>
+
     <div class="social-icons">
-        <a href="#" class="icon discord"><i class="fab fa-discord"></i></a>
-        <a href="#" class="icon facebook"><i class="fab fa-facebook"></i></a>
-        <a href="#" class="icon twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="icon instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-discord"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
     </div>
 </section>
 
+</div>
+
 <footer>
-    <p>&copy; 2025 Jeuz Portfolio</p>
+    <p>© 2025 Jeuz Portfolio</p>
 </footer>
 
 <script>
 // Typing animation
-const roles = ["Video Editor", "Web Developer", "Game Developer"];
-let i = 0, j = 0, currentRole = '', isDeleting = false;
-const typing = document.querySelector('.typing');
+const roles = ["Web Developer", "Game Developer", "Video Editor"];
+let i = 0, j = 0, isDeleting = false;
+const typing = document.querySelector(".typing");
 
 function type() {
-    currentRole = roles[i];
-    if (isDeleting) {
-        typing.textContent = currentRole.substring(0, j--);
-        if (j < 0) { isDeleting = false; i = (i + 1) % roles.length; }
+    let current = roles[i];
+    if (!isDeleting) {
+        typing.textContent = current.slice(0, j++);
+        if (j > current.length) { isDeleting = true; setTimeout(type, 1000); return; }
     } else {
-        typing.textContent = currentRole.substring(0, j++);
-        if (j > currentRole.length) { isDeleting = true; j = currentRole.length; setTimeout(type, 1000); return; }
+        typing.textContent = current.slice(0, j--);
+        if (j < 0) { isDeleting = false; i = (i + 1) % roles.length; }
     }
-    setTimeout(type, isDeleting ? 100 : 200);
+    setTimeout(type, isDeleting ? 80 : 150);
 }
 type();
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
