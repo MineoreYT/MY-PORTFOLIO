@@ -227,8 +227,9 @@ footer {
 <!-- ================= ABOUT ================== -->
 <section id="about_me" class="about_me">
     <h2>About Me</h2>
-    <p>Hello, I'm Jeuz, a passionate technologist studying Information Technology.</p>
-    <p>I specialize in both hardware and software development, growing through self-study and practical projects.</p>
+    <p>Hello, I'm Jeuz, a passionate full-stack developer studying Information Technology.</p>
+    <p>I specialize in modern web development with React, Node.js, and database systems. I build complete applications from frontend to backend, focusing on clean code and user experience.</p>
+    <p>My recent work includes a comprehensive Pharmacy Information System showcasing my skills in full-stack JavaScript development, authentication systems, and database design.</p>
 </section>
 
 <!-- ================= SKILLS ================== -->
@@ -238,10 +239,15 @@ footer {
         <div class="icons"><img src="images/html.webp"><span>HTML</span></div>
         <div class="icons"><img src="images/css.png"><span>CSS</span></div>
         <div class="icons"><img src="images/js.png"><span>JavaScript</span></div>
+        <div class="icons"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"><span>React</span></div>
+        <div class="icons"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"><span>Node.js</span></div>
+        <div class="icons"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"><span>Express.js</span></div>
         <div class="icons"><img src="images/php.png"><span>PHP</span></div>
+        <div class="icons"><img src="images/mysql.png"><span>MySQL</span></div>
+        <div class="icons"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg"><span>SQLite</span></div>
+        <div class="icons"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"><span>Tailwind CSS</span></div>
         <div class="icons"><img src="images/github.png"><span>GitHub</span></div>
         <div class="icons"><img src="images/godot.png"><span>Godot</span></div>
-        <div class="icons"><img src="images/mysql.png"><span>MySQL</span></div>
         <div class="icons"><img src="images/pr.png"><span>Premiere Pro</span></div>
     </div>
 </section>
@@ -249,6 +255,46 @@ footer {
 <!-- ================= PROJECTS ================== -->
 <section id="projects">
     <h2>Projects</h2>
+
+    <!-- Featured Project -->
+    <div style="background:#0e0f11; border:2px solid #00e5c1; border-radius:12px; padding:1.5rem; margin-bottom:2rem;">
+        <h3 style="color:#00e5c1; margin-bottom:1rem;">🏥 Pharmacare Information System</h3>
+        <p style="margin-bottom:1rem;">A comprehensive Pharmacy Management System built with modern full-stack technologies.</p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
+            <div>
+                <h4 style="color:#fff; margin-bottom:0.5rem;">Frontend:</h4>
+                <ul style="margin-left:1rem; line-height:1.5;">
+                    <li>React 19.2.3 (Latest)</li>
+                    <li>Tailwind CSS</li>
+                    <li>Modern UI with Glass Morphism</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color:#fff; margin-bottom:0.5rem;">Backend:</h4>
+                <ul style="margin-left:1rem; line-height:1.5;">
+                    <li>Node.js + Express.js</li>
+                    <li>SQLite Database</li>
+                    <li>JWT Authentication</li>
+                    <li>Role-based Access Control</li>
+                </ul>
+            </div>
+        </div>
+        <div style="margin-bottom:1rem;">
+            <h4 style="color:#fff; margin-bottom:0.5rem;">Key Features:</h4>
+            <ul style="margin-left:1rem; line-height:1.5;">
+                <li>🔐 Secure user authentication & authorization</li>
+                <li>💊 Drug management system</li>
+                <li>📦 Real-time inventory tracking</li>
+                <li>📋 Prescription management</li>
+                <li>👥 Multi-role support (Admin, Pharmacist, Tech, Doctor)</li>
+            </ul>
+        </div>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+            <a href="https://github.com/MineoreYT/Pharmacare-information-system" style="background:#00e5c1; color:#000; padding:0.5rem 1rem; border-radius:5px; font-weight:500;">View Code</a>
+            <span style="background:#333; color:#fff; padding:0.5rem 1rem; border-radius:5px;">Live Demo Coming Soon</span>
+        </div>
+    </div>
 
     <div class="projects-container">
         <div class="project"><img src="images/dark.png"><a href="#">Dark Fantasy</a></div>
@@ -269,6 +315,19 @@ footer {
 <!-- ================= EXPERIENCE ================== -->
 <section id="experience" class="experience">
     <h2>Experience</h2>
+    
+    <h3 style="color:#fff;">Full-Stack Development — 2024</h3>
+    <p>Pharmacare Information System • Personal Project</p>
+    <ul>
+        <li>Built complete MERN-like stack with React + Node.js</li>
+        <li>Implemented JWT authentication & role-based access</li>
+        <li>Designed SQLite database with Sequelize ORM</li>
+        <li>Created modern UI with Tailwind CSS & glass morphism</li>
+        <li>Deployed to GitHub with comprehensive documentation</li>
+    </ul>
+    
+    <br>
+    
     <h3 style="color:#fff;">Thesis — 2024</h3>
     <p>IGO Bike Shop • Inventory & POS System</p>
     <ul>
@@ -306,7 +365,7 @@ footer {
 
 <script>
 // Typing animation
-const roles = ["Web Developer", "Game Developer", "Video Editor"];
+const roles = ["Full-Stack Developer", "React Developer", "Node.js Developer", "Web Developer"];
 let i = 0, j = 0, isDeleting = false;
 const typing = document.querySelector(".typing");
 
