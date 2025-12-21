@@ -395,6 +395,154 @@ a { text-decoration:none; color:inherit; }
     box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
+/* -------------------- CV SECTION --------------------- */
+.cv-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cv-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.cv-left {
+    background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+    color: #fff;
+    padding: 2rem;
+}
+
+.cv-profile {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.cv-photo {
+    margin-bottom: 1.5rem;
+}
+
+.cv-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.cv-profile h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.cv-subtitle {
+    color: #ff9500;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.cv-objective {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #e2e8f0;
+}
+
+.cv-section {
+    margin-bottom: 2rem;
+}
+
+.cv-section h4 {
+    color: #ff9500;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #ff9500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cv-contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.cv-contact-item i {
+    width: 20px;
+    margin-right: 0.8rem;
+    color: #ff9500;
+}
+
+.cv-right {
+    padding: 2rem;
+}
+
+.education-item, .experience-item, .thesis-item {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.education-item:last-child, .experience-item:last-child, .thesis-item:last-child {
+    border-bottom: none;
+}
+
+.education-header, .thesis-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.education-header h5, .experience-item h5, .thesis-header h5 {
+    color: #2d3748;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.education-year, .thesis-date {
+    background: #ff9500;
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.education-school {
+    color: #4a5568;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.education-location {
+    color: #718096;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.experience-item ul, .thesis-item ul {
+    margin-top: 0.8rem;
+    padding-left: 1.2rem;
+}
+
+.experience-item li, .thesis-item li {
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
 /* -------------------- CONTACT SECTION --------------------- */
 .contact-content {
     max-width:800px;
@@ -456,6 +604,27 @@ a { text-decoration:none; color:inherit; }
         grid-template-columns:1fr;
     }
     
+    .cv-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cv-left {
+        order: 2;
+    }
+    
+    .cv-right {
+        order: 1;
+    }
+    
+    .education-header, .thesis-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .education-year, .thesis-date {
+        margin-top: 0.5rem;
+    }
+    
     .social-sidebar {
         display:none;
     }
@@ -474,6 +643,7 @@ a { text-decoration:none; color:inherit; }
                 <h1><span class="typing"></span></h1>
                 <p>Passionate full-stack developer specializing in modern web technologies. I create innovative solutions with React, Node.js, and cutting-edge design principles.</p>
                 <a href="#about" class="hero-btn">More About Me</a>
+                <a href="#cv" class="hero-btn" style="margin-left: 1rem; background: #ff9500;">View CV</a>
             </div>
             <div class="hero-image">
                 <div class="profile-circle">
@@ -721,6 +891,107 @@ a { text-decoration:none; color:inherit; }
                     <div class="project-links">
                         <a href="https://shinyore.itch.io/a-blocky-game" class="project-link btn-primary" target="_blank">Play Game</a>
                         <a href="https://shinyore.itch.io/a-blocky-game" class="project-link btn-secondary" target="_blank">View on itch.io</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= CV SECTION ================== -->
+<section id="cv" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2>CURRICULUM VITAE</h2>
+            <p>My professional background, education, and experience</p>
+        </div>
+        <div class="cv-content">
+            <div class="cv-grid">
+                <div class="cv-left">
+                    <div class="cv-profile">
+                        <div class="cv-photo">
+                            <img src="images/porfolfioXD.jpg" alt="Jeuz Jephte B. Nalogoc" class="cv-img">
+                        </div>
+                        <h3>JEUZ JEPHTE B. NALOGOC</h3>
+                        <p class="cv-subtitle">"NALOGOC"</p>
+                        <p class="cv-objective">Seeking a challenging career where I can utilize my skills and abilities, to have vast working experience to grab a career progression opportunity.</p>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h4>CONTACT INFORMATION</h4>
+                        <div class="cv-contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+63 9508486050</span>
+                        </div>
+                        <div class="cv-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jesukoanateno@gmail.com</span>
+                        </div>
+                        <div class="cv-contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Black Nazarene, Green Valley Subdivision, Brgy. San Jose, Puerto Princesa City, Palawan</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cv-right">
+                    <div class="cv-section">
+                        <h4>EDUCATION</h4>
+                        <div class="education-item">
+                            <div class="education-header">
+                                <h5>Bachelor of Science in Information Technology</h5>
+                                <span class="education-year">2021 - 2024</span>
+                            </div>
+                            <p class="education-school">Fulbright College - Palawan</p>
+                            <p class="education-location">Puerto Princesa City, Palawan</p>
+                        </div>
+                        
+                        <div class="education-item">
+                            <div class="education-header">
+                                <h5>High School</h5>
+                                <span class="education-year">2016 - 2021</span>
+                            </div>
+                            <p class="education-school">San Vicente National High School</p>
+                            <p class="education-location">Brgy. Poblacion, San Vicente, Palawan</p>
+                        </div>
+                        
+                        <div class="education-item">
+                            <div class="education-header">
+                                <h5>Elementary</h5>
+                                <span class="education-year">2010 - 2016</span>
+                            </div>
+                            <p class="education-school">New Agutaya Elementary School (2010-2013)</p>
+                            <p class="education-location">Brgy. New Agutaya, San Vicente, Palawan</p>
+                            <p class="education-school">Santor Elementary School (2013-2016)</p>
+                            <p class="education-location">Brgy Santor, Malolos, Bulacan</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h4>EXPERIENCE</h4>
+                        <div class="experience-item">
+                            <h5>Web Development Experience</h5>
+                            <ul>
+                                <li>Designed websites with HTML and CSS</li>
+                                <li>Used MySQL to connect with the database</li>
+                                <li>Utilized PHP for back-end development</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h4>THESIS PROJECT</h4>
+                        <div class="thesis-item">
+                            <div class="thesis-header">
+                                <h5>IGO BIKE SHOP'S INVENTORY MANAGEMENT AND POINT OF SALE SYSTEM</h5>
+                                <span class="thesis-date">December 2024</span>
+                            </div>
+                            <ul>
+                                <li>Designed user interface with Visual Studio Code using PHP and MySQL as database</li>
+                                <li>Used MySQL as the website database</li>
+                                <li>Tested and documented the application</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
