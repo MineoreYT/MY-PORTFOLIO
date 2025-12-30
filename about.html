@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - Jeuz Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+/* -------------------- GLOBAL --------------------- */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:#18191a;
+    color:#e4e6ea;
+    line-height:1.6;
+}
+a { text-decoration:none; color:inherit; }
+
+/* -------------------- FACEBOOK HEADER --------------------- */
+.fb-header {
+    background:#242526;
+    border-bottom:1px solid #3e4042;
+    padding:0.5rem 1rem;
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.fb-logo {
+    color:#1877f2;
+    font-size:2rem;
+    font-weight:bold;
+}
+
+.fb-search {
+    background:#3a3b3c;
+    border:none;
+    border-radius:50px;
+    padding:0.5rem 1rem;
+    color:#e4e6ea;
+    width:240px;
+}
+
+.fb-nav {
+    display:flex;
+    gap:2rem;
+}
+
+.fb-nav-item {
+    color:#b0b3b8;
+    font-size:1.5rem;
+    padding:0.5rem;
+    border-radius:8px;
+    transition:all 0.3s ease;
+    cursor:pointer;
+}
+
+.fb-nav-item:hover, .fb-nav-item.active {
+    color:#1877f2;
+    background:#3a3b3c;
+}
+
+/* -------------------- PROFILE HEADER --------------------- */
+.profile-header {
+    margin-top:60px;
+    background:#242526;
+    padding:2rem;
+    border-bottom:1px solid #3e4042;
+    display:flex;
+    align-items:center;
+    gap:2rem;
+}
+
+.profile-pic {
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.profile-info h1 {
+    font-size:2rem;
+    font-weight:700;
+    margin-bottom:0.5rem;
+}
+
+.profile-info p {
+    color:#b0b3b8;
+    font-size:1rem;
+}
+
+.back-btn {
+    background:#42484d;
+    color:#e4e6ea;
+    padding:0.6rem 1.5rem;
+    border-radius:6px;
+    font-weight:600;
+    font-size:0.9rem;
+    cursor:pointer;
+    transition:all 0.2s ease;
+    border:none;
+    margin-left:auto;
+}
+
+.back-btn:hover {
+    background:#4e5458;
+}
+
+/* -------------------- NAVIGATION TABS --------------------- */
+.profile-nav {
+    background:#242526;
+    padding:0 2rem;
+    border-bottom:1px solid #3e4042;
+    display:flex;
+    gap:2rem;
+}
+
+.nav-tab {
+    padding:1rem 0;
+    color:#b0b3b8;
+    font-weight:600;
+    border-bottom:3px solid transparent;
+    transition:all 0.3s ease;
+    cursor:pointer;
+}
+
+.nav-tab:hover, .nav-tab.active {
+    color:#1877f2;
+    border-bottom-color:#1877f2;
+}
+
+/* -------------------- MAIN CONTENT --------------------- */
+.main-content {
+    max-width:800px;
+    margin:2rem auto;
+    padding:0 2rem;
+}
+
+.about-section {
+    background:#242526;
+    border-radius:8px;
+    padding:2rem;
+    margin-bottom:2rem;
+    border:1px solid #3e4042;
+}
+
+.about-section h2 {
+    color:#e4e6ea;
+    font-size:1.5rem;
+    font-weight:700;
+    margin-bottom:1.5rem;
+    display:flex;
+    align-items:center;
+    gap:0.8rem;
+}
+
+.about-section h2 i {
+    color:#1877f2;
+}
+
+.about-text {
+    color:#b0b3b8;
+    font-size:1rem;
+    line-height:1.7;
+    margin-bottom:1.5rem;
+}
+
+.info-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:1.5rem;
+    margin-top:2rem;
+}
+
+.info-item {
+    background:#3a3b3c;
+    padding:1.5rem;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    gap:1rem;
+}
+
+.info-icon {
+    width:50px;
+    height:50px;
+    background:#1877f2;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:1.2rem;
+}
+
+.info-content h3 {
+    color:#e4e6ea;
+    font-size:1.1rem;
+    font-weight:600;
+    margin-bottom:0.3rem;
+}
+
+.info-content p {
+    color:#b0b3b8;
+    font-size:0.9rem;
+}
+
+.journey-timeline {
+    margin-top:2rem;
+}
+
+.timeline-item {
+    background:#3a3b3c;
+    padding:1.5rem;
+    border-radius:8px;
+    margin-bottom:1rem;
+    border-left:4px solid #1877f2;
+}
+
+.timeline-year {
+    color:#1877f2;
+    font-weight:700;
+    font-size:0.9rem;
+    margin-bottom:0.5rem;
+}
+
+.timeline-title {
+    color:#e4e6ea;
+    font-weight:600;
+    margin-bottom:0.5rem;
+}
+
+.timeline-desc {
+    color:#b0b3b8;
+    font-size:0.9rem;
+}
+
+/* -------------------- RESPONSIVE --------------------- */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction:column;
+        text-align:center;
+    }
+    
+    .back-btn {
+        margin-left:0;
+        margin-top:1rem;
+    }
+    
+    .info-grid {
+        grid-template-columns:1fr;
+    }
+    
+    .fb-search {
+        display:none;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- ================= FACEBOOK HEADER ================== -->
+<div class="fb-header">
+    <div class="fb-logo">
+        <i class="fab fa-facebook-f"></i>
+    </div>
+    <input type="text" class="fb-search" placeholder="Search Jeuz's Portfolio">
+    <div class="fb-nav">
+        <div class="fb-nav-item" onclick="window.location.href='index.html'"><i class="fas fa-home"></i></div>
+        <div class="fb-nav-item"><i class="fas fa-users"></i></div>
+        <div class="fb-nav-item"><i class="fas fa-tv"></i></div>
+        <div class="fb-nav-item"><i class="fas fa-store"></i></div>
+        <div class="fb-nav-item"><i class="fas fa-gamepad"></i></div>
+    </div>
+</div>
+
+<!-- ================= PROFILE HEADER ================== -->
+<div class="profile-header">
+    <img src="images/porfolfioXD.jpg" alt="Jeuz" class="profile-pic">
+    <div class="profile-info">
+        <h1>About Jeuz Jephte B. Nalogoc</h1>
+        <p>Full-Stack Developer • Game Developer • React Specialist</p>
+    </div>
+    <button class="back-btn" onclick="window.location.href='index.html'">
+        <i class="fas fa-arrow-left"></i> Back to Profile
+    </button>
+</div>
+
+<!-- ================= NAVIGATION TABS ================== -->
+<div class="profile-nav">
+    <div class="nav-tab" onclick="window.location.href='index.html'">Posts</div>
+    <div class="nav-tab active">About</div>
+    <div class="nav-tab" onclick="window.location.href='featured.html'">Featured</div>
+    <div class="nav-tab" onclick="window.location.href='cv.html'">CV</div>
+    <div class="nav-tab" onclick="window.location.href='contacts.html'">Contacts</div>
+</div>
+
+<!-- ================= MAIN CONTENT ================== -->
+<div class="main-content">
+    <!-- About Me Section -->
+    <div class="about-section">
+        <h2><i class="fas fa-user"></i> About Me</h2>
+        <div class="about-text">
+            Hello! I'm Jeuz Jephte B. Nalogoc, a passionate full-stack developer currently studying Information Technology at Fulbright College - Palawan. I specialize in modern web development with React, Node.js, and database systems, building complete applications from frontend to backend with a focus on clean code and exceptional user experience. 
+        
+    </div>
+
+    <!-- Personal Info Section -->
+    <div class="about-section">
+        <h2><i class="fas fa-info-circle"></i> Personal Information</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <div class="info-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Location</h3>
+                    <p>Puerto Princesa City, Palawan, Philippines</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Education</h3>
+                    <p>BS Information Technology at Fulbright College - Palawan</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Profession</h3>
+                    <p>Full-Stack Developer & Game Developer</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Interests</h3>
+                    <p>Web Development, Game Development, Mobile Apps, UI/UX Design</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Journey Section -->
+    <div class="about-section">
+        <h2><i class="fas fa-road"></i> My Journey</h2>
+        <div class="journey-timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">2025</div>
+                <div class="timeline-title">InkStream & Advanced Projects</div>
+                <div class="timeline-desc">Launched InkStream manga reading platform with PWA and Android app support. Completed thesis project IGO Bike Shop System. Mastered React 19, Vite 7, and Capacitor.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2025</div>
+                <div class="timeline-title">Full-Stack Development Mastery</div>
+                <div class="timeline-desc">Built Pharmacare Information System and BrainSpark Learning Platform. Gained expertise in React, Node.js, Express.js, and database management.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2022</div>
+                <div class="timeline-title">Game Development & Web Apps</div>
+                <div class="timeline-desc">Created Echoes of the Void and A Blocky Game using Godot Engine. Developed O-Hello-Chat real-time messaging application.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2021</div>
+                <div class="timeline-title">Started IT Journey</div>
+                <div class="timeline-desc">Began studying Information Technology at Fulbright College - Palawan. Started learning web development fundamentals with HTML, CSS, JavaScript, and PHP.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills & Expertise Section -->
+    <div class="about-section">
+        <h2><i class="fas fa-code"></i> Skills & Expertise</h2>
+        <div class="about-text">
+            I have extensive experience with modern web technologies and development tools. My expertise spans across frontend and backend development, mobile app development, game development, and database management.
+        </div>
+        <div class="info-grid">
+            <div class="info-item">
+                <div class="info-icon">
+                    <i class="fab fa-react"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Frontend Development</h3>
+                    <p>React, JavaScript, HTML5, CSS3, Tailwind CSS, Vite</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Backend Development</h3>
+                    <p>Node.js, Express.js, PHP, MySQL, SQLite, JWT Authentication</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Mobile Development</h3>
+                    <p>PWA, Capacitor, Android App Development, Responsive Design</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Game Development</h3>
+                    <p>Godot Engine, GDScript, 2D Graphics, Game Design, Physics</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
