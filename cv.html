@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV - Jeuz Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI', sans-serif; background:#18191a; color:#e4e6ea; line-height:1.6; }
+.fb-header { background:#242526; border-bottom:1px solid #3e4042; padding:0.5rem 1rem; position:fixed; top:0; width:100%; z-index:1000; display:flex; align-items:center; justify-content:space-between; }
+.fb-logo { color:#1877f2; font-size:2rem; font-weight:bold; }
+.fb-nav { display:flex; gap:2rem; }
+.fb-nav-item { color:#b0b3b8; font-size:1.5rem; padding:0.5rem; border-radius:8px; cursor:pointer; }
+.fb-nav-item:hover { color:#1877f2; background:#3a3b3c; }
+.profile-header { margin-top:60px; background:#242526; padding:2rem; border-bottom:1px solid #3e4042; display:flex; align-items:center; gap:2rem; }
+.profile-pic { width:100px; height:100px; border-radius:50%; object-fit:cover; }
+.profile-info h1 { font-size:2rem; font-weight:700; margin-bottom:0.5rem; }
+.profile-info p { color:#b0b3b8; }
+.back-btn { background:#42484d; color:#e4e6ea; padding:0.6rem 1.5rem; border-radius:6px; font-weight:600; cursor:pointer; border:none; margin-left:auto; }
+.back-btn:hover { background:#4e5458; }
+.profile-nav { background:#242526; padding:0 2rem; border-bottom:1px solid #3e4042; display:flex; gap:2rem; }
+.nav-tab { padding:1rem 0; color:#b0b3b8; font-weight:600; border-bottom:3px solid transparent; cursor:pointer; }
+.nav-tab.active { color:#1877f2; border-bottom-color:#1877f2; }
+.main-content { max-width:900px; margin:2rem auto; padding:0 2rem; }
+.cv-section { background:#242526; border-radius:8px; padding:2rem; margin-bottom:2rem; border:1px solid #3e4042; }
+.cv-section h2 { color:#e4e6ea; font-size:1.5rem; font-weight:700; margin-bottom:1.5rem; display:flex; align-items:center; gap:0.8rem; }
+.cv-section h2 i { color:#1877f2; }
+.cv-item { background:#3a3b3c; padding:1.5rem; border-radius:8px; margin-bottom:1rem; border-left:4px solid #1877f2; transition:all 0.3s ease; }
+.cv-item:hover { background:#4e4f50; transform:translateX(5px); }
+.cv-item.clickable { cursor:pointer; }
+.cv-item h3 { color:#e4e6ea; font-size:1.2rem; font-weight:600; margin-bottom:0.5rem; }
+.cv-meta { color:#1877f2; font-size:0.9rem; font-weight:500; margin-bottom:0.5rem; }
+.cv-item p { color:#b0b3b8; margin-bottom:0.5rem; }
+.cv-item ul { margin-left:1.5rem; margin-top:0.5rem; }
+.cv-item li { color:#b0b3b8; margin-bottom:0.3rem; }
+.project-link { display:inline-flex; align-items:center; gap:0.5rem; color:#1877f2; font-weight:600; margin-top:0.5rem; }
+.project-link:hover { text-decoration:underline; }
+.project-link i { font-size:0.9rem; }
+.contact-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1rem; }
+.contact-item { background:#3a3b3c; padding:1rem; border-radius:8px; display:flex; align-items:center; gap:1rem; }
+.contact-icon { width:40px; height:40px; background:#1877f2; border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; }
+.contact-info h4 { color:#e4e6ea; margin-bottom:0.3rem; }
+.contact-info p { color:#b0b3b8; font-size:0.9rem; }
+</style>
+</head>
+<body>
+
+<div class="fb-header">
+    <div class="fb-logo"><i class="fab fa-facebook-f"></i></div>
+    <div class="fb-nav">
+        <div class="fb-nav-item" onclick="window.location.href='index.html'"><i class="fas fa-home"></i></div>
+        <div class="fb-nav-item"><i class="fas fa-users"></i></div>
+        <div class="fb-nav-item"><i class="fas fa-tv"></i></div>
+        <div class="fb-nav-item"><i class="fas fa-store"></i></div>
+        <div class="fb-nav-item"><i class="fas fa-gamepad"></i></div>
+    </div>
+</div>
+
+<div class="profile-header">
+    <img src="images/porfolfioXD.jpg" alt="Jeuz" class="profile-pic">
+    <div class="profile-info">
+        <h1>Curriculum Vitae</h1>
+        <p>Professional background, education, and experience</p>
+    </div>
+    <button class="back-btn" onclick="window.location.href='index.html'">
+        <i class="fas fa-arrow-left"></i> Back to Profile
+    </button>
+</div>
+
+<div class="profile-nav">
+    <div class="nav-tab" onclick="window.location.href='index.html'">Posts</div>
+    <div class="nav-tab" onclick="window.location.href='about.html'">About</div>
+    <div class="nav-tab" onclick="window.location.href='featured.html'">Featured</div>
+    <div class="nav-tab">CV</div>
+    <div class="nav-tab" onclick="window.location.href='contacts.html'">Contacts</div>
+</div>
+
+<div class="main-content">
+    <div class="cv-section">
+        <h2><i class="fas fa-user"></i> Personal Information</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-user"></i></div>
+                <div class="contact-info">
+                    <h4>Full Name</h4>
+                    <p>Jeuz Jephte B. Nalogoc</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="contact-info">
+                    <h4>Address</h4>
+                    <p>Puerto Princesa City, Palawan, Philippines</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                <div class="contact-info">
+                    <h4>Phone</h4>
+                    <p>+63 9508486050</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <div class="contact-info">
+                    <h4>Email</h4>
+                    <p>jesukoanateno@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cv-section"></div>
+        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+        <div class="cv-item">
+            <h3>Bachelor of Science in Information Technology</h3>
+            <div class="cv-meta">2021 - 2024 • Fulbright College - Palawan</div>
+            <p>Puerto Princesa City, Palawan</p>
+            <p>Focused on web development, database management, and software engineering principles.</p>
+        </div>
+        <div class="cv-item">
+            <h3>Senior High School</h3>
+            <div class="cv-meta">2016 - 2021 • San Vicente National High School</div>
+            <p>Brgy. Poblacion, San Vicente, Palawan</p>
+        </div>
+        <div class="cv-item">
+            <h3>Elementary Education</h3>
+            <div class="cv-meta">2010 - 2016</div>
+            <p>New Agutaya Elementary School (2010-2013) - Brgy. New Agutaya, San Vicente, Palawan</p>
+            <p>Santor Elementary School (2013-2016) - Brgy Santor, Malolos, Bulacan</p>
+        </div>
+    </div>
+
+    <div class="cv-section">
+        <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
+        <div class="cv-item">
+            <h3>Full-Stack Developer</h3>
+            <div class="cv-meta">2021 - Present • Self-Employed/Freelance</div>
+            <ul>
+                <li>Developed comprehensive web applications using React, Node.js, and modern technologies</li>
+                <li>Created InkStream manga reading platform with PWA and Android app support</li>
+                <li>Built Pharmacare Information System for pharmacy management</li>
+                <li>Designed and implemented BrainSpark learning platform with Firebase integration</li>
+                <li>Utilized modern development tools including Vite, Tailwind CSS, and Capacitor</li>
+            </ul>
+        </div>
+        <div class="cv-item">
+            <h3>Game Developer</h3>
+            <div class="cv-meta">2022 - Present • Independent Developer</div>
+            <ul>
+                <li>Created "Echoes of the Void" - dark fantasy adventure game using Godot Engine</li>
+                <li>Developed "A Blocky Game" - puzzle/adventure game with unique mechanics</li>
+                <li>Implemented game physics, level design, and interactive storytelling</li>
+                <li>Published games on itch.io platform</li>
+            </ul>
+        </div>
+        <div class="cv-item">
+            <h3>Web Development Experience</h3>
+            <div class="cv-meta">2021 - Present</div>
+            <ul>
+                <li>Designed responsive websites with HTML5, CSS3, and JavaScript</li>
+                <li>Implemented database connectivity using MySQL and SQLite</li>
+                <li>Utilized PHP for backend development and server-side logic</li>
+                <li>Created real-time applications with Socket.io and WebSocket technology</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="cv-section">
+        <h2><i class="fas fa-project-diagram"></i> Major Projects</h2>
+        <div class="cv-item clickable" onclick="window.open('https://ink-stream-pearl.vercel.app/', '_blank')">
+            <h3>InkStream - Manga Reading Platform <i class="fas fa-external-link-alt" style="font-size:1rem; color:#1877f2;"></i></h3>
+            <div class="cv-meta">December 2025 • React 19, Vite 7, Capacitor, PWA</div>
+            <p>Comprehensive manga reading application with real MangaDx API integration, PWA support, native Android app, NSFW content management, and responsive design.</p>
+            <a href="https://ink-stream-pearl.vercel.app/" target="_blank" class="project-link" onclick="event.stopPropagation()">
+                <i class="fas fa-globe"></i> Visit Live Site
+            </a>
+        </div>
+        <div class="cv-item">
+            <h3>IGO Bike Shop System (Thesis Project)</h3>
+            <div class="cv-meta">December 2023 • PHP, JavaScript, MySQL</div>
+            <p>Complete inventory and point-of-sale system for bike shop management featuring comprehensive inventory tracking and sales management.</p>
+        </div>
+        <div class="cv-item clickable" onclick="window.open('https://pharmacare-system.surge.sh/', '_blank')">
+            <h3>Pharmacare Information System <i class="fas fa-external-link-alt" style="font-size:1rem; color:#1877f2;"></i></h3>
+            <div class="cv-meta">November 2025 • React, Node.js, Express.js, SQLite</div>
+            <p>Pharmacy management system with user authentication, drug management, inventory tracking, and prescription handling.</p>
+            <a href="https://pharmacare-system.surge.sh/" target="_blank" class="project-link" onclick="event.stopPropagation()">
+                <i class="fas fa-globe"></i> Visit Live Site
+            </a>
+        </div>
+        <div class="cv-item clickable" onclick="window.open('https://brainspark-edu.vercel.app/', '_blank')">
+            <h3>BrainSpark Learning Platform <i class="fas fa-external-link-alt" style="font-size:1rem; color:#1877f2;"></i></h3>
+            <div class="cv-meta">October 2025 • React, Firebase, Tailwind CSS</div>
+            <p>Online quiz platform where teachers can create classes, post lessons with attachments, and create quizzes for students.</p>
+            <a href="https://brainspark-edu.vercel.app/" target="_blank" class="project-link" onclick="event.stopPropagation()">
+                <i class="fas fa-globe"></i> Visit Live Site
+            </a>
+        </div>
+    </div>
+
+    <div class="cv-section">
+        <h2><i class="fas fa-code"></i> Technical Skills</h2>
+        <div class="cv-item">
+            <h3>Frontend Development</h3>
+            <p>React 19, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, Vite, Responsive Design</p>
+        </div>
+        <div class="cv-item">
+            <h3>Backend Development</h3>
+            <p>Node.js, Express.js, PHP, RESTful APIs, JWT Authentication, Socket.io</p>
+        </div>
+        <div class="cv-item">
+            <h3>Database Management</h3>
+            <p>MySQL, SQLite, Firebase, Database Design, Query Optimization</p>
+        </div>
+        <div class="cv-item">
+            <h3>Mobile & Game Development</h3>
+            <p>PWA, Capacitor, Android Development, Godot Engine, GDScript, Game Physics</p>
+        </div>
+        <div class="cv-item">
+            <h3>Tools & Technologies</h3>
+            <p>Git, GitHub, Visual Studio Code, Vercel, npm, Webpack, Chrome DevTools</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeuz Portfolio - Facebook Style</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+/* -------------------- GLOBAL --------------------- */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:#18191a;
+    color:#e4e6ea;
+    line-height:1.6;
+}
+a { text-decoration:none; color:inherit; }
+
+.container {
+    max-width:1200px;
+    margin:auto;
+    padding:0;
+}
+
+/* -------------------- FACEBOOK HEADER --------------------- */
+.fb-header {
+    background:#242526;
+    border-bottom:1px solid #3e4042;
+    padding:0.5rem 1rem;
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.fb-logo {
+    color:#1877f2;
+    font-size:2rem;
+    font-weight:bold;
+}
+
+.fb-search {
+    background:#3a3b3c;
+    border:none;
+    border-radius:50px;
+    padding:0.5rem 1rem;
+    color:#e4e6ea;
+    width:240px;
+}
+
+.fb-nav {
+    display:flex;
+    gap:2rem;
+}
+
+.fb-nav-item {
+    color:#b0b3b8;
+    font-size:1.5rem;
+    padding:0.5rem;
+    border-radius:8px;
+    transition:all 0.3s ease;
+}
+
+.fb-nav-item:hover, .fb-nav-item.active {
+    color:#1877f2;
+    background:#3a3b3c;
+}
+
+/* -------------------- PROFILE SECTION --------------------- */
+.profile-section {
+    margin-top:60px;
+    background:#242526;
+}
+
+.cover-photo {
+    height:350px;
+    background:linear-gradient(135deg, #1877f2 0%, #42a5f5 100%);
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.cover-photo::before {
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(0,0,0,0.3);
+}
+
+.cover-text {
+    position:relative;
+    z-index:2;
+    text-align:center;
+    color:white;
+}
+
+.cover-text h1 {
+    font-size:3rem;
+    font-weight:700;
+    margin-bottom:0.5rem;
+}
+
+.cover-text p {
+    font-size:1.2rem;
+    opacity:0.9;
+}
+
+.profile-info {
+    padding:1rem 2rem;
+    display:flex;
+    align-items:center;
+    gap:2rem;
+    border-bottom:1px solid #3e4042;
+}
+
+.profile-pic {
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    border:4px solid #242526;
+    margin-top:-90px;
+    object-fit:cover;
+}
+
+.profile-details h2 {
+    font-size:2rem;
+    font-weight:700;
+    margin-bottom:0.5rem;
+}
+
+.profile-details p {
+    color:#b0b3b8;
+    margin-bottom:0.5rem;
+}
+
+.profile-stats {
+    display:flex;
+    gap:1rem;
+    margin-top:1rem;
+}
+
+.stat-item {
+    color:#b0b3b8;
+    font-size:0.9rem;
+}
+
+.stat-number {
+    color:#e4e6ea;
+    font-weight:600;
+}
+
+/* -------------------- NAVIGATION TABS --------------------- */
+.profile-nav {
+    background:#242526;
+    padding:0 2rem;
+    border-bottom:1px solid #3e4042;
+    display:flex;
+    gap:2rem;
+}
+
+.nav-tab {
+    padding:1rem 0;
+    color:#b0b3b8;
+    font-weight:600;
+    border-bottom:3px solid transparent;
+    transition:all 0.3s ease;
+    cursor:pointer;
+}
+
+.nav-tab:hover, .nav-tab.active {
+    color:#1877f2;
+    border-bottom-color:#1877f2;
+}
+
+/* -------------------- MAIN CONTENT --------------------- */
+.main-content {
+    display:grid;
+    grid-template-columns:1fr 2fr;
+    gap:2rem;
+    padding:2rem;
+    max-width:1200px;
+    margin:0 auto;
+}
+
+/* -------------------- SIDEBAR --------------------- */
+.sidebar {
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+}
+
+.sidebar-section {
+    background:#242526;
+    border-radius:8px;
+    padding:1rem;
+    border:1px solid #3e4042;
+}
+
+.sidebar-section h3 {
+    font-size:1.2rem;
+    font-weight:600;
+    margin-bottom:1rem;
+    color:#e4e6ea;
+}
+
+/* -------------------- INTRO SECTION --------------------- */
+.intro-item {
+    display:flex;
+    align-items:center;
+    gap:0.8rem;
+    margin-bottom:0.8rem;
+    color:#b0b3b8;
+}
+
+.intro-item i {
+    color:#1877f2;
+    width:20px;
+}
+
+/* -------------------- FEATURED SKILLS --------------------- */
+.featured-grid {
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:0.8rem;
+}
+
+.skill-item {
+    background:#3a3b3c;
+    padding:0.8rem;
+    border-radius:8px;
+    text-align:center;
+    transition:all 0.3s ease;
+}
+
+.skill-item:hover {
+    background:#4e4f50;
+    transform:translateY(-2px);
+}
+
+.skill-item img {
+    width:40px;
+    height:40px;
+    margin-bottom:0.5rem;
+}
+
+.skill-item span {
+    font-size:0.8rem;
+    color:#e4e6ea;
+    font-weight:500;
+}
+
+/* -------------------- CV SECTION --------------------- */
+.cv-item {
+    background:#3a3b3c;
+    padding:1rem;
+    border-radius:8px;
+    margin-bottom:0.8rem;
+}
+
+.cv-item h4 {
+    color:#1877f2;
+    font-size:1rem;
+    margin-bottom:0.5rem;
+}
+
+.cv-item p {
+    color:#b0b3b8;
+    font-size:0.9rem;
+    margin-bottom:0.3rem;
+}
+
+.cv-date {
+    color:#65676b;
+    font-size:0.8rem;
+}
+
+/* -------------------- CONTACTS SECTION --------------------- */
+.contact-item {
+    display:flex;
+    align-items:center;
+    gap:0.8rem;
+    padding:0.8rem;
+    border-radius:8px;
+    transition:all 0.3s ease;
+    cursor:pointer;
+}
+
+.contact-item:hover {
+    background:#3a3b3c;
+}
+
+.contact-avatar {
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#1877f2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:1.2rem;
+}
+
+.contact-info h4 {
+    color:#e4e6ea;
+    font-size:0.9rem;
+    margin-bottom:0.2rem;
+}
+
+.contact-info p {
+    color:#b0b3b8;
+    font-size:0.8rem;
+}
+
+/* -------------------- POSTS SECTION --------------------- */
+.posts-section {
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+}
+
+.post {
+    background:#242526;
+    border-radius:8px;
+    border:1px solid #3e4042;
+    overflow:hidden;
+}
+
+.post-header {
+    padding:1rem;
+    display:flex;
+    align-items:center;
+    gap:0.8rem;
+}
+
+.post-avatar {
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.post-info h4 {
+    color:#e4e6ea;
+    font-size:0.9rem;
+    margin-bottom:0.2rem;
+}
+
+.post-time {
+    color:#b0b3b8;
+    font-size:0.8rem;
+}
+
+.post-content {
+    padding:0 1rem 1rem;
+}
+
+.post-text {
+    color:#e4e6ea;
+    margin-bottom:1rem;
+    line-height:1.5;
+}
+
+.post-image {
+    width:100%;
+    max-height:400px;
+    object-fit:cover;
+    border-radius:8px;
+    margin-bottom:1rem;
+}
+
+.tech-tags {
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.5rem;
+    margin-bottom:1rem;
+}
+
+.tech-tag {
+    background:#1877f2;
+    color:white;
+    padding:0.3rem 0.8rem;
+    border-radius:15px;
+    font-size:0.8rem;
+    font-weight:500;
+}
+
+.post-actions {
+    display:flex;
+    justify-content:space-around;
+    padding:0.8rem 1rem;
+    border-top:1px solid #3e4042;
+}
+
+.post-action {
+    display:flex;
+    align-items:center;
+    gap:0.5rem;
+    color:#b0b3b8;
+    padding:0.5rem 1rem;
+    border-radius:8px;
+    transition:all 0.3s ease;
+    cursor:pointer;
+}
+
+.post-action:hover {
+    background:#3a3b3c;
+}
+
+.post-action i {
+    font-size:1.2rem;
+}
+
+/* -------------------- RESPONSIVE --------------------- */
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns:1fr;
+        padding:1rem;
+    }
+    
+    .profile-info {
+        flex-direction:column;
+        text-align:center;
+    }
+    
+    .profile-pic {
+        margin-top:-60px;
+        width:120px;
+        height:120px;
+    }
+    
+    .cover-text h1 {
+        font-size:2rem;
+    }
+    
+    .featured-grid {
+        grid-template-columns:repeat(2, 1fr);
+    }
+    
+    .fb-search {
+        display:none;
+    }
+    
+    .profile-nav {
+        overflow-x:auto;
+        padding:0 1rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- ================= FACEBOOK HEADER ================== -->
+<div class="fb-header">
+    <div class="fb-logo">
+        <i class="fab fa-facebook-f"></i>
+    </div>
+    <input type="text" class="fb-search" placeholder="Search Jeuz's Portfolio">
+    <div class="fb-nav">
+        <div class="fb-nav-item active"><i class="fas fa-home"></i></div>
+        <div class="fb-nav-item"><i class="fas fa-users"></i></div>
+        <div class="fb-nav-item"><i class="fas fa-tv"></i></div>
+        <div class="fb-nav-item"><i class="fas fa-store"></i></div>
+        <div class="fb-nav-item"><i class="fas fa-gamepad"></i></div>
+    </div>
+</div>
+
+<!-- ================= PROFILE SECTION ================== -->
+<div class="profile-section">
+    <div class="cover-photo">
+        <div class="cover-text">
+            <h1>JEUZ JEPHTE B. NALOGOC</h1>
+            <p>Full-Stack Developer • Game Developer • React Specialist</p>
+        </div>
+    </div>
+    
+    <div class="profile-info">
+        <img src="images/porfolfioXD.jpg" alt="Jeuz" class="profile-pic">
+        <div class="profile-details">
+            <h2>Jeuz Jephte B. Nalogoc</h2>
+            <p>Passionate full-stack developer specializing in modern web technologies</p>
+            <p><i class="fas fa-map-marker-alt"></i> Puerto Princesa City, Palawan</p>
+            <p><i class="fas fa-graduation-cap"></i> Fulbright College - Palawan</p>
+            <div class="profile-stats">
+                <span class="stat-item"><span class="stat-number">15+</span> Projects</span>
+                <span class="stat-item"><span class="stat-number">3+</span> Years Experience</span>
+                <span class="stat-item"><span class="stat-number">10+</span> Technologies</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="profile-nav">
+        <div class="nav-tab active">Posts</div>
+        <div class="nav-tab">About</div>
+        <div class="nav-tab">Featured</div>
+        <div class="nav-tab">CV</div>
+        <div class="nav-tab">Contacts</div>
+    </div>
+</div>
+
+<!-- ================= MAIN CONTENT ================== -->
+<div class="main-content">
+    <!-- ================= SIDEBAR ================== -->
+    <div class="sidebar">
+        <!-- Intro Section -->
+        <div class="sidebar-section">
+            <h3>Intro</h3>
+            <div class="intro-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Full-Stack Developer</span>
+            </div>
+            <div class="intro-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Studied at Fulbright College - Palawan</span>
+            </div>
+            <div class="intro-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Lives in Puerto Princesa City, Palawan</span>
+            </div>
+            <div class="intro-item">
+                <i class="fas fa-envelope"></i>
+                <span>jesukoanateno@gmail.com</span>
+            </div>
+            <div class="intro-item">
+                <i class="fas fa-phone"></i>
+                <span>+63 9508486050</span>
+            </div>
+        </div>
+
+        <!-- Featured Skills -->
+        <div class="sidebar-section">
+            <h3>Featured Skills</h3>
+            <div class="featured-grid">
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                    <span>React</span>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                    <span>Node.js</span>
+                </div>
+                <div class="skill-item">
+                    <img src="images/js.png" alt="JavaScript">
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-item">
+                    <img src="https://vitejs.dev/logo.svg" alt="Vite">
+                    <span>Vite</span>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind">
+                    <span>Tailwind</span>
+                </div>
+                <div class="skill-item">
+                    <img src="images/mysql.png" alt="MySQL">
+                    <span>MySQL</span>
+                </div>
+                <div class="skill-item">
+                    <img src="images/html.webp" alt="HTML">
+                    <span>HTML5</span>
+                </div>
+                <div class="skill-item">
+                    <img src="images/css.png" alt="CSS">
+                    <span>CSS3</span>
+                </div>
+                <div class="skill-item">
+                    <img src="images/github.png" alt="GitHub">
+                    <span>GitHub</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CV Section -->
+        <div class="sidebar-section">
+            <h3>CV</h3>
+            <div class="cv-item">
+                <h4>Education</h4>
+                <p>Bachelor of Science in Information Technology</p>
+                <p>Fulbright College - Palawan</p>
+                <span class="cv-date">2021 - 2024</span>
+            </div>
+            <div class="cv-item">
+                <h4>Experience</h4>
+                <p>Web Development Experience</p>
+                <p>Full-Stack Development with React, Node.js, PHP, MySQL</p>
+                <span class="cv-date">2021 - Present</span>
+            </div>
+            <div class="cv-item">
+                <h4>Thesis Project</h4>
+                <p>IGO Bike Shop System - Inventory & POS System</p>
+                <p>PHP, JavaScript, MySQL, Visual Studio Code</p>
+                <span class="cv-date">December 2024</span>
+            </div>
+        </div>
+
+        <!-- Contacts Section -->
+        <div class="sidebar-section">
+            <h3>Contacts</h3>
+            <div class="contact-item">
+                <div class="contact-avatar">
+                    <i class="fab fa-github"></i>
+                </div>
+                <div class="contact-info">
+                    <h4>GitHub</h4>
+                    <p>MineoreYT</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-avatar">
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <div class="contact-info">
+                    <h4>LinkedIn</h4>
+                    <p>Connect with me</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-avatar">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-info">
+                    <h4>Email</h4>
+                    <p>jesukoanateno@gmail.com</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-avatar">
+                    <i class="fab fa-discord"></i>
+                </div>
+                <div class="contact-info">
+                    <h4>Discord</h4>
+                    <p>Let's chat</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= POSTS SECTION ================== -->
+    <div class="posts-section">
+        <!-- InkStream Post -->
+        <div class="post">
+            <div class="post-header">
+                <img src="images/porfolfioXD.jpg" alt="Jeuz" class="post-avatar">
+                <div class="post-info">
+                    <h4>Jeuz Jephte B. Nalogoc</h4>
+                    <span class="post-time">2 weeks ago • <i class="fas fa-globe"></i></span>
+                </div>
+            </div>
+            <div class="post-content">
+                <div class="post-text">
+                    🚀 Just launched InkStream - A comprehensive manga reading platform! 📚<br><br>
+                    Features real MangaDx API integration, PWA support, native Android app, NSFW content management, and responsive design for all devices. Built with the latest technologies for the best user experience!
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">React 19</span>
+                    <span class="tech-tag">Vite 7</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                    <span class="tech-tag">Capacitor</span>
+                    <span class="tech-tag">PWA</span>
+                    <span class="tech-tag">Vercel</span>
+                    <span class="tech-tag">MangaDx API</span>
+                </div>
+            </div>
+            <div class="post-actions">
+                <div class="post-action">
+                    <i class="fas fa-thumbs-up"></i>
+                    <span>Like</span>
+                </div>
+                <div class="post-action">
+                    <i class="fas fa-comment"></i>
+                    <span>Comment</span>
+                </div>
+                <div class="post-action">
+                    <i class="fas fa-share"></i>
+                    <span>Share</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pharmacare Post -->
+        <div class="post">
+            <div class="post-header">
+                <img src="images/porfolfioXD.jpg" alt="Jeuz" class="post-avatar">
+                <div class="post-info">
+                    <h4>Jeuz Jephte B. Nalogoc</h4>
+                    <span class="post-time">1 month ago • <i class="fas fa-globe"></i></span>
+                </div>
+            </div>
+            <div class="post-content">
+                <div class="post-text">
+                    🏥 Completed Pharmacare Information System! <br><br>
+                    A comprehensive Pharmacy Management System with user authentication, drug management, inventory tracking, and prescription handling. This project showcases my full-stack development skills.
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express.js</span>
+                    <span class="tech-tag">SQLite</span>
+                    <span class="tech-tag">JWT</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                </div>
+            </div>
+            <div class="post-actions">
+                <div class="post-action">
+                    <i class="fas fa-thumbs-up"></i>
+                    <span>Like</span>
+                </div>
+                <div class="post-action">
+                    <i class="fas fa-comment"></i>
+                    <span>Comment</span>
+                </div>
+                <div class="post-action">
+                    <i class="fas fa-share"></i>
+                    <span>Share</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- BrainSpark Post -->
+        <div class="post">
+            <div class="post-header">
+                <img src="images/porfolfioXD.jpg" alt="Jeuz" class="post-avatar">
+                <div class="post-info">
+                    <h4>Jeuz Jephte B. Nalogoc</h4>
+                    <span class="post-time">2 months ago • <i class="fas fa-globe"></i></span>
+                </div>
+            </div>
+            <div class="post-content">
+                <div class="post-text">
+                    🧠 BrainSpark Learning Platform is live! ✨<br><br>
+                    A modern online quiz platform where teachers can create classes, post lessons with attachments, and create quizzes. Students can join classes, view lessons, and take interactive quizzes.
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express.js</span>
+                    <span class="tech-tag">Firebase</span>
+                    <span class="tech-tag">JWT</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                </div>
+            </div>
+            <div class="post-actions">
+                <div class="post-action">
+                    <i class="fas fa-thumbs-up"></i>
+                    <span>Like</span>
+                </div>
+                <div class="post-action">
+                    <i class="fas fa-comment"></i>
+                    <span>Comment</span>
+                </div>
+                <div class="post-action">
+                    <i class="fas fa-share"></i>
+                    <span>Share</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- O-Hello-Chat Post -->
+        <div class="post">
+            <div class="post-header">
+                <img src="images/porfolfioXD.jpg" alt="Jeuz" class="post-avatar">
+                <div class="post-info">
+                    <h4>Jeuz Jephte B. Nalogoc</h4>
+                    <span class="post-time">3 months ago • <i class="fas fa-globe"></i></span>
+                </div>
+            </div>
+            <div class="post-content">
+                <div class="post-text">
+                    💬 O-Hello-Chat is ready! <br><br>
+                    An anonymous chat application with real-time messaging and modern UI design. Perfect for connecting with people around the world instantly!
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Vite</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Socket.io</span>
+                </div>
+            </div>
+            <div class="post-actions">
+                <div class="post-action">
+                    <i class="fas fa-thumbs-up"></i>
+                    <span>Like</span>
+                </div>
+                <div class="post-action">
+                    <i class="fas fa-comment"></i>
+                    <span>Comment</span>
+                </div>
+                <div class="post-action">
+                    <i class="fas fa-share"></i>
+                    <span>Share</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Echoes of the Void Game Post -->
+        <div class="post">
+            <div class="post-header">
+                <img src="images/porfolfioXD.jpg" alt="Jeuz" class="post-avatar">
+                <div class="post-info">
+                    <h4>Jeuz Jephte B. Nalogoc</h4>
+                    <span class="post-time">4 months ago • <i class="fas fa-globe"></i></span>
+                </div>
+            </div>
+            <div class="post-content">
+                <div class="post-text">
+                    🎮 Echoes of the Void is now available! <br><br>
+                    An immersive dark fantasy adventure game with engaging gameplay mechanics, atmospheric visuals, and compelling storyline. Available on itch.io!
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">Godot Engine</span>
+                    <span class="tech-tag">GDScript</span>
+                    <span class="tech-tag">2D Graphics</span>
+                    <span class="tech-tag">Game Design</span>
+                </div>
+            </div>
+            <div class="post-actions">
+                <div class="post-action">
+                    <i class="fas fa-thumbs-up"></i>
+                    <span>Like</span>
+                </div>
+                <div class="post-action">
+                    <i class="fas fa-comment"></i>
+                    <span>Comment</span>
+                </div>
+                <div class="post-action">
+                    <i class="fas fa-share"></i>
+                    <span>Share</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- A Blocky Game Post -->
+        <div class="post">
+            <div class="post-header">
+                <img src="images/porfolfioXD.jpg" alt="Jeuz" class="post-avatar">
+                <div class="post-info">
+                    <h4>Jeuz Jephte B. Nalogoc</h4>
+                    <span class="post-time">5 months ago • <i class="fas fa-globe"></i></span>
+                </div>
+            </div>
+            <div class="post-content">
+                <div class="post-text">
+                    🧱 A Blocky Game released! <br><br>
+                    A creative block-based puzzle game with unique mechanics and challenging levels. Features intuitive controls and progressively difficult gameplay elements.
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">Godot Engine</span>
+                    <span class="tech-tag">GDScript</span>
+                    <span class="tech-tag">Level Design</span>
+                    <span class="tech-tag">Physics</span>
+                </div>
+            </div>
+            <div class="post-actions">
+                <div class="post-action">
+                    <i class="fas fa-thumbs-up"></i>
+                    <span>Like</span>
+                </div>
+                <div class="post-action">
+                    <i class="fas fa-comment"></i>
+                    <span>Comment</span>
+                </div>
+                <div class="post-action">
+                    <i class="fas fa-share"></i>
+                    <span>Share</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- IGO Bike Shop Post -->
+        <div class="post">
+            <div class="post-header">
+                <img src="images/porfolfioXD.jpg" alt="Jeuz" class="post-avatar">
+                <div class="post-info">
+                    <h4>Jeuz Jephte B. Nalogoc</h4>
+                    <span class="post-time">6 months ago • <i class="fas fa-globe"></i></span>
+                </div>
+            </div>
+            <div class="post-content">
+                <div class="post-text">
+                    🚲 IGO Bike Shop System completed! <br><br>
+                    My thesis project - a complete inventory and point-of-sale system for bike shop management. Features comprehensive inventory tracking and sales management built with PHP and MySQL.
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">PHP</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">HTML/CSS</span>
+                    <span class="tech-tag">Visual Studio Code</span>
+                </div>
+            </div>
+            <div class="post-actions">
+                <div class="post-action">
+                    <i class="fas fa-thumbs-up"></i>
+                    <span>Like</span>
+                </div>
+                <div class="post-action">
+                    <i class="fas fa-comment"></i>
+                    <span>Comment</span>
+                </div>
+                <div class="post-action">
+                    <i class="fas fa-share"></i>
+                    <span>Share</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Simple tab functionality
+document.querySelectorAll('.nav-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+
+// Post action interactions
+document.querySelectorAll('.post-action').forEach(action => {
+    action.addEventListener('click', function() {
+        const icon = this.querySelector('i');
+        const text = this.querySelector('span');
+        
+        if (text.textContent === 'Like') {
+            icon.style.color = '#1877f2';
+            text.style.color = '#1877f2';
+        }
+    });
+});
+</script>
+
+</body>
+</html>""

@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacts - Jeuz Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI', sans-serif; background:#18191a; color:#e4e6ea; }
+.fb-header { background:#242526; border-bottom:1px solid #3e4042; padding:0.5rem 1rem; position:fixed; top:0; width:100%; z-index:1000; display:flex; align-items:center; justify-content:space-between; }
+.fb-logo { color:#1877f2; font-size:2rem; font-weight:bold; }
+.fb-nav { display:flex; gap:2rem; }
+.fb-nav-item { color:#b0b3b8; font-size:1.5rem; padding:0.5rem; border-radius:8px; cursor:pointer; }
+.fb-nav-item:hover { color:#1877f2; background:#3a3b3c; }
+.profile-header { margin-top:60px; background:#242526; padding:2rem; border-bottom:1px solid #3e4042; display:flex; align-items:center; gap:2rem; }
+.profile-pic { width:100px; height:100px; border-radius:50%; object-fit:cover; }
+.profile-info h1 { font-size:2rem; font-weight:700; margin-bottom:0.5rem; }
+.profile-info p { color:#b0b3b8; }
+.back-btn { background:#42484d; color:#e4e6ea; padding:0.6rem 1.5rem; border-radius:6px; font-weight:600; cursor:pointer; border:none; margin-left:auto; }
+.profile-nav { background:#242526; padding:0 2rem; border-bottom:1px solid #3e4042; display:flex; gap:2rem; }
+.nav-tab { padding:1rem 0; color:#b0b3b8; font-weight:600; border-bottom:3px solid transparent; cursor:pointer; }
+.nav-tab.active { color:#1877f2; border-bottom-color:#1877f2; }
+.main-content { max-width:800px; margin:2rem auto; padding:0 2rem; }
+.contact-section { background:#242526; border-radius:8px; padding:2rem; margin-bottom:2rem; border:1px solid #3e4042; }
+.contact-section h2 { color:#e4e6ea; font-size:1.5rem; font-weight:700; margin-bottom:1.5rem; display:flex; align-items:center; gap:0.8rem; }
+.contact-section h2 i { color:#1877f2; }
+.contact-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.5rem; }
+.contact-card { background:#3a3b3c; padding:2rem; border-radius:12px; text-align:center; transition:all 0.3s ease; }
+.contact-card:hover { background:#4e4f50; transform:translateY(-5px); }
+.contact-avatar { width:80px; height:80px; background:#1877f2; border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:2rem; margin:0 auto 1rem; }
+.contact-card h3 { color:#e4e6ea; font-size:1.2rem; font-weight:600; margin-bottom:0.5rem; }
+.contact-card p { color:#b0b3b8; margin-bottom:1rem; }
+.contact-btn { background:#1877f2; color:white; padding:0.6rem 1.5rem; border-radius:6px; font-weight:600; cursor:pointer; border:none; transition:all 0.2s ease; }
+.contact-btn:hover { background:#166fe5; }
+</style>
+</head>
+<body>
+<div class="fb-header">
+    <div class="fb-logo"><i class="fab fa-facebook-f"></i></div>
+    <div class="fb-nav">
+        <div class="fb-nav-item" onclick="window.location.href='index.html'"><i class="fas fa-home"></i></div>
+        <div class="fb-nav-item"><i class="fas fa-users"></i></div>
+        <div class="fb-nav-item"><i class="fas fa-tv"></i></div>
+        <div class="fb-nav-item"><i class="fas fa-store"></i></div>
+        <div class="fb-nav-item"><i class="fas fa-gamepad"></i></div>
+    </div>
+</div>
+
+<div class="profile-header">
+    <img src="images/porfolfioXD.jpg" alt="Jeuz" class="profile-pic">
+    <div class="profile-info">
+        <h1>Contact Information</h1>
+        <p>Let's connect and work together</p>
+    </div>
+    <button class="back-btn" onclick="window.location.href='index.html'">
+        <i class="fas fa-arrow-left"></i> Back to Profile
+    </button>
+</div>
+
+<div class="profile-nav">
+    <div class="nav-tab" onclick="window.location.href='index.html'">Posts</div>
+    <div class="nav-tab" onclick="window.location.href='about.html'">About</div>
+    <div class="nav-tab" onclick="window.location.href='featured.html'">Featured</div>
+    <div class="nav-tab" onclick="window.location.href='cv.html'">CV</div>
+    <div class="nav-tab active">Contacts</div>
+</div>
+
+<div class="main-content">
+    <div class="contact-section">
+        <h2><i class="fas fa-address-book"></i> Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-avatar">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email</h3>
+                <p>jesukoanateno@gmail.com</p>
+                <button class="contact-btn" onclick="window.open('mailto:jesukoanateno@gmail.com')">Send Email</button>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-avatar">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h3>GitHub</h3>
+                <p>MineoreYT</p>
+                <button class="contact-btn" onclick="window.open('https://github.com/MineoreYT', '_blank')">View Profile</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

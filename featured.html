@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Featured - Jeuz Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI', sans-serif; background:#18191a; color:#e4e6ea; line-height:1.6; }
+.fb-header { background:#242526; border-bottom:1px solid #3e4042; padding:0.5rem 1rem; position:fixed; top:0; width:100%; z-index:1000; display:flex; align-items:center; justify-content:space-between; }
+.fb-logo { color:#1877f2; font-size:2rem; font-weight:bold; }
+.fb-nav { display:flex; gap:2rem; }
+.fb-nav-item { color:#b0b3b8; font-size:1.5rem; padding:0.5rem; border-radius:8px; cursor:pointer; }
+.fb-nav-item:hover { color:#1877f2; background:#3a3b3c; }
+.profile-header { margin-top:60px; background:#242526; padding:2rem; border-bottom:1px solid #3e4042; display:flex; align-items:center; gap:2rem; }
+.profile-pic { width:100px; height:100px; border-radius:50%; object-fit:cover; }
+.profile-info h1 { font-size:2rem; font-weight:700; margin-bottom:0.5rem; }
+.profile-info p { color:#b0b3b8; }
+.back-btn { background:#42484d; color:#e4e6ea; padding:0.6rem 1.5rem; border-radius:6px; font-weight:600; cursor:pointer; border:none; margin-left:auto; }
+.back-btn:hover { background:#4e5458; }
+.profile-nav { background:#242526; padding:0 2rem; border-bottom:1px solid #3e4042; display:flex; gap:2rem; }
+.nav-tab { padding:1rem 0; color:#b0b3b8; font-weight:600; border-bottom:3px solid transparent; cursor:pointer; }
+.nav-tab.active { color:#1877f2; border-bottom-color:#1877f2; }
+.main-content { max-width:1000px; margin:2rem auto; padding:0 2rem; }
+.featured-section { background:#242526; border-radius:8px; padding:2rem; margin-bottom:2rem; border:1px solid #3e4042; }
+.featured-section h2 { color:#e4e6ea; font-size:1.5rem; font-weight:700; margin-bottom:1.5rem; display:flex; align-items:center; gap:0.8rem; }
+.featured-section h2 i { color:#1877f2; }
+.skills-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1.5rem; }
+.skill-card { background:#3a3b3c; padding:2rem; border-radius:12px; text-align:center; transition:all 0.3s ease; }
+.skill-card:hover { background:#4e4f50; transform:translateY(-5px); }
+.skill-card img { width:60px; height:60px; margin-bottom:1rem; }
+.skill-card h3 { color:#e4e6ea; font-size:1.1rem; font-weight:600; margin-bottom:0.5rem; }
+.skill-card p { color:#b0b3b8; font-size:0.9rem; }
+</style>
+</head>
+<body>
+
+<div class="fb-header">
+    <div class="fb-logo"><i class="fab fa-facebook-f"></i></div>
+    <div class="fb-nav">
+        <div class="fb-nav-item" onclick="window.location.href='index.html'"><i class="fas fa-home"></i></div>
+        <div class="fb-nav-item"><i class="fas fa-users"></i></div>
+        <div class="fb-nav-item"><i class="fas fa-tv"></i></div>
+        <div class="fb-nav-item"><i class="fas fa-store"></i></div>
+        <div class="fb-nav-item"><i class="fas fa-gamepad"></i></div>
+    </div>
+</div>
+
+<div class="profile-header">
+    <img src="images/porfolfioXD.jpg" alt="Jeuz" class="profile-pic">
+    <div class="profile-info">
+        <h1>Featured Skills & Technologies</h1>
+        <p>Showcasing my expertise and achievements</p>
+    </div>
+    <button class="back-btn" onclick="window.location.href='index.html'">
+        <i class="fas fa-arrow-left"></i> Back to Profile
+    </button>
+</div>
+
+<div class="profile-nav">
+    <div class="nav-tab" onclick="window.location.href='index.html'">Posts</div>
+    <div class="nav-tab" onclick="window.location.href='about.html'">About</div>
+    <div class="nav-tab">Featured</div>
+    <div class="nav-tab" onclick="window.location.href='cv.html'">CV</div>
+    <div class="nav-tab" onclick="window.location.href='contacts.html'">Contacts</div>
+</div>
+
+<div class="main-content">
+    <div class="featured-section">
+        <h2><i class="fas fa-code"></i> Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                <h3>React</h3>
+                <p>Advanced proficiency in React 19</p>
+            </div>
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                <h3>Node.js</h3>
+                <p>Backend development with Express.js</p>
+            </div>
+            <div class="skill-card">
+                <img src="images/js.png" alt="JavaScript">
+                <h3>JavaScript</h3>
+                <p>ES6+ and modern JS features</p>
+            </div>
+            <div class="skill-card">
+                <img src="https://vitejs.dev/logo.svg" alt="Vite">
+                <h3>Vite</h3>
+                <p>Modern build tool for fast development</p>
+            </div>
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind">
+                <h3>Tailwind CSS</h3>
+                <p>Utility-first CSS framework</p>
+            </div>
+            <div class="skill-card">
+                <img src="images/mysql.png" alt="MySQL">
+                <h3>MySQL</h3>
+                <p>Database design and optimization</p>
+            </div>
+            <div class="skill-card">
+                <img src="images/php.png" alt="PHP">
+                <h3>PHP</h3>
+                <p>Server-side scripting</p>
+            </div>
+            <div class="skill-card">
+                <img src="images/godot.png" alt="Godot">
+                <h3>Godot Engine</h3>
+                <p>Game development with GDScript</p>
+            </div>
+            <div class="skill-card">
+                <img src="images/html.webp" alt="HTML5">
+                <h3>HTML5</h3>
+                <p>Semantic markup and accessibility</p>
+            </div>
+            <div class="skill-card">
+                <img src="images/css.png" alt="CSS3">
+                <h3>CSS3</h3>
+                <p>Flexbox, Grid, and animations</p>
+            </div>
+            <div class="skill-card">
+                <img src="images/github.png" alt="GitHub">
+                <h3>GitHub</h3>
+                <p>Version control and collaboration</p>
+            </div>
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express">
+                <h3>Express.js</h3>
+                <p>RESTful APIs and middleware</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="featured-section">
+        <h2><i class="fas fa-trophy"></i> Major Achievements</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fas fa-mobile-alt" style="font-size:3rem; color:#1877f2; margin-bottom:1rem;"></i>
+                <h3>InkStream App</h3>
+                <p>Multi-platform manga reading app with PWA and Android support</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-graduation-cap" style="font-size:3rem; color:#1877f2; margin-bottom:1rem;"></i>
+                <h3>Thesis Project</h3>
+                <p>IGO Bike Shop System - Complete inventory and POS solution</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-hospital" style="font-size:3rem; color:#1877f2; margin-bottom:1rem;"></i>
+                <h3>Pharmacare System</h3>
+                <p>Full-stack pharmacy management with authentication</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-brain" style="font-size:3rem; color:#1877f2; margin-bottom:1rem;"></i>
+                <h3>BrainSpark Platform</h3>
+                <p>Online learning platform with quiz and lesson management</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-gamepad" style="font-size:3rem; color:#1877f2; margin-bottom:1rem;"></i>
+                <h3>Game Portfolio</h3>
+                <p>Multiple published games on itch.io using Godot Engine</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-comments" style="font-size:3rem; color:#1877f2; margin-bottom:1rem;"></i>
+                <h3>Real-time Chat</h3>
+                <p>O-Hello-Chat with Socket.io and modern UI design</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="featured-section">
+        <h2><i class="fas fa-star"></i> Expertise Areas</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fab fa-react" style="font-size:3rem; color:#61dafb; margin-bottom:1rem;"></i>
+                <h3>Frontend Development</h3>
+                <p>React, JavaScript, HTML5, CSS3, Tailwind CSS, Responsive Design</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-server" style="font-size:3rem; color:#68a063; margin-bottom:1rem;"></i>
+                <h3>Backend Development</h3>
+                <p>Node.js, Express.js, PHP, RESTful APIs, JWT Authentication</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-database" style="font-size:3rem; color:#f29111; margin-bottom:1rem;"></i>
+                <h3>Database Management</h3>
+                <p>MySQL, SQLite, Firebase, Database Design, Query Optimization</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-mobile-alt" style="font-size:3rem; color:#1877f2; margin-bottom:1rem;"></i>
+                <h3>Mobile Development</h3>
+                <p>PWA, Capacitor, Android Apps, Cross-platform Solutions</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
